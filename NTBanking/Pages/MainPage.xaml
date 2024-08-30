@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NTBanking.MainPage"
+             BackgroundColor="#FAFAFA">
+
+    <ScrollView>
+        <Grid Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <!-- Background Gradient -->
+            <Grid>
+                <BoxView HeightRequest="200"
+                         VerticalOptions="Start"
+                         BackgroundColor="#007BFF" 
+                         Opacity="0.9"
+                         CornerRadius="20,20,0,0"/>
+            </Grid>
+
+            <!-- Main Content -->
+            <VerticalStackLayout Padding="10,40,10,10" Spacing="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <!-- Logo -->
+                <Image Source="nt.png" 
+                       WidthRequest="400"
+                       HeightRequest="90"
+                       HorizontalOptions="Center" 
+                       Aspect="AspectFit" />
+
+                <!-- Title -->
+                <Label Text="Chào mừng bạn đến với NTBank"
+                       FontSize="20"
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       TextColor="White" 
+                       FontFamily="OpenSans-Bold" />
+
+                <!-- Phone Number Entry -->
+                <Frame HasShadow="True" CornerRadius="30" Padding="10" BackgroundColor="White">
+                    <Grid>
+                        <Entry x:Name="PhoneNumberEntry" 
+                               Placeholder="Số Điện Thoại" 
+                               Keyboard="Telephone" 
+                               BackgroundColor="Transparent"
+                               TextColor="#333"
+                               HeightRequest="50" 
+                               VerticalOptions="Center"
+                               PlaceholderColor="#aaa" 
+                               FontFamily="OpenSans-Regular" />
+                    </Grid>
+                </Frame>
+
+                <!-- Password Entry -->
+                <Frame HasShadow="True" CornerRadius="30" Padding="10" BackgroundColor="White">
+                    <Grid>
+                        <Entry x:Name="PasswordEntry" 
+                               Placeholder="Mật Khẩu" 
+                               IsPassword="True" 
+                               BackgroundColor="Transparent"
+                               TextColor="#333"
+                               HeightRequest="50" 
+                               VerticalOptions="Center"
+                               PlaceholderColor="#aaa" 
+                               FontFamily="OpenSans-Regular" />
+                        <ImageButton x:Name="TogglePasswordButton"
+                                     Source="eye_off.png"
+                                     WidthRequest="24" 
+                                     HeightRequest="24" 
+                                     HorizontalOptions="End" 
+                                     VerticalOptions="Center" 
+                                     Clicked="OnTogglePasswordClicked"
+                                     BackgroundColor="Transparent"
+                                     Padding="0"/>
+                    </Grid>
+                </Frame>
+
+                <!-- CAPTCHA Section -->
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+                    <!-- CAPTCHA Code -->
+                    <Label x:Name="CaptchaLabel" 
+                           Text=""
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       TextColor="#007BFF"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Start" 
+                       Margin="0,10" />
+
+                    <!-- CAPTCHA Entry -->
+                    <!-- CAPTCHA Entry -->
+                    <Frame HasShadow="True" Padding="0" BackgroundColor="White" VerticalOptions="Center">
+                        <Grid>
+                            <Entry x:Name="CaptchaEntryBox"
+               Placeholder="Nhập Mã CAPTCHA" 
+               BackgroundColor="Transparent"
+               TextColor="#333"
+               HeightRequest="50" 
+               VerticalOptions="Center"
+               PlaceholderColor="#aaa" 
+               FontFamily="OpenSans-Regular" />
+                        </Grid>
+                    </Frame>
+
+                </HorizontalStackLayout>
+
+
+                <!-- Login and Register Buttons in a Single Row -->
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+
+                    <!-- Login Button -->
+                    <Button Text="Đăng Nhập" 
+                            BackgroundColor="#007BFF" 
+                            TextColor="White" 
+                            HeightRequest="50"
+                            WidthRequest="170"
+                            Clicked="OnLoginClicked"
+                            FontFamily="OpenSans-Bold"
+                            CornerRadius="25"
+                            HorizontalOptions="FillAndExpand"/>
+
+                    <!-- Register Button -->
+                    <Button Text="Tạo tài khoản"
+                            BackgroundColor="#28A745" 
+                            TextColor="White" 
+                            HeightRequest="50" 
+                            WidthRequest="170"
+                            Clicked="OnRegisterClicked"
+                            FontFamily="OpenSans-Bold"
+                            CornerRadius="25"
+                            HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

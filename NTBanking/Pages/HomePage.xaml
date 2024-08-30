@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NTBanking.HomePage">
+
+    <Grid>
+        <!-- Nền với các góc bo tròn -->
+        <Frame HasShadow="False" CornerRadius="0" Margin="0" Padding="0" BackgroundColor="Transparent">
+            <Grid>
+                <!-- Nền trên cùng với góc bo tròn -->
+                <BoxView Color="#9bd1d4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                <BoxView Color="#f0f4f8" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+        </Frame>
+
+        <!-- Nội dung chính -->
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="350">
+
+            <!-- Logo -->
+            <Image Source="nt.png" 
+                   WidthRequest="400" 
+                   HeightRequest="100" 
+                   HorizontalOptions="Center" 
+                   Aspect="AspectFit" />
+
+            <!-- Tiêu đề -->
+            <Label Text="Chào Mừng" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#333" 
+                   Margin="0,20" 
+                   FontFamily="OpenSans-Bold" />
+
+            
+
+        </VerticalStackLayout>
+
+        <!-- Thanh điều hướng ở phía dưới -->
+        <StackLayout Orientation="Horizontal" 
+             BackgroundColor="#FFFFFF" 
+             HeightRequest="60" 
+             VerticalOptions="End" 
+             HorizontalOptions="FillAndExpand">
+
+            <ImageButton Source="home.png" 
+                 WidthRequest="40" 
+                 HeightRequest="40" 
+                 HorizontalOptions="CenterAndExpand" 
+                 VerticalOptions="Center" 
+                 Clicked="OnHomeIconClicked"/>
+
+            <ImageButton Source="bell.png" 
+                 WidthRequest="40" 
+                 HeightRequest="40" 
+                 HorizontalOptions="CenterAndExpand" 
+                 VerticalOptions="Center" 
+                 Clicked="OnNotificationIconClicked"/>
+
+            <ImageButton Source="chart.png" 
+                 WidthRequest="40" 
+                 HeightRequest="40" 
+                 HorizontalOptions="CenterAndExpand" 
+                 VerticalOptions="Center" 
+                 Clicked="OnCurrencyIconClicked"/>
+            <ImageButton Source="person.png" 
+                WidthRequest="40" 
+                HeightRequest="40" 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="Center" 
+                Clicked="OnPersonIconClicked"/>
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>
