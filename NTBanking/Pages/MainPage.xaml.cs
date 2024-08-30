@@ -24,6 +24,7 @@ namespace NTBanking
 
             _capchaService.GenerateCaptcha(); // Khởi tạo mã CAPTCHA khi trang được tạo
             CaptchaLabel.Text = _captchaCode;
+            ///cmnet
 
         }
 
