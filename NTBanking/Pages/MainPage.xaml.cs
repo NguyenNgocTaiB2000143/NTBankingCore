@@ -22,7 +22,7 @@ namespace NTBanking
                 NavigationPage.SetHasBackButton(this, false);
             }
 
-            _capchaService.GenerateCaptcha(); // Khởi tạo mã CAPTCHA khi trang được tạo
+            _captchaCode = _capchaService.GenerateCaptcha(); // Khởi tạo mã CAPTCHA khi trang được tạo
             CaptchaLabel.Text = _captchaCode;
             ///cmnet
 

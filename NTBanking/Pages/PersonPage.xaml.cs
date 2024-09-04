@@ -4,23 +4,21 @@ namespace NTBanking.Pages;
 
 public partial class PersonPage : ContentPage
 {
-    private readonly Capcha _capchaService;
+    private readonly Capcha _capchaService; 
+    private string _captchaCode = string.Empty;
+    public MainPage mainPage = new MainPage();
 
     public PersonPage()
 	{
-		InitializeComponent();
+        _capchaService = new Capcha();
+
+        InitializeComponent();
 
 	}
 
-
-
     private async void OnLogoutClicked(object sender, EventArgs e)
     {
-
-        await Navigation.PopToRootAsync();
-        _capchaService.GenerateCaptcha();
-
-
+        await Navigation.PushAsync(mainPage);            
     }
 
     private async void OnHomeIconClicked(object sender, EventArgs e)
